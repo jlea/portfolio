@@ -33,6 +33,30 @@ function loadResume() {
     `;
     container.appendChild(summarySec);
 
+    // Impact Stats
+    if (data.impactStats) {
+        const statsSec = document.createElement('section');
+        statsSec.className = 'section stats-section';
+        // We want a clean row: "11+ Years Experience | 5 Shipped Games | ..."
+        // Let's build a pipe-separated list or a flex row.
+
+        const statsList = document.createElement('div');
+        statsList.className = 'resume-stats-row';
+
+        data.impactStats.forEach(stat => {
+            const statItem = document.createElement('div');
+            statItem.className = 'resume-stat-item';
+            statItem.innerHTML = `
+                <span class="stat-value">${stat.value}</span>
+                <span class="stat-label">${stat.label}</span>
+            `;
+            statsList.appendChild(statItem);
+        });
+
+        statsSec.appendChild(statsList);
+        container.appendChild(statsSec);
+    }
+
     // Experience
     const expSec = document.createElement('section');
     expSec.className = 'section experience-section';

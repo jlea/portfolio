@@ -8,7 +8,7 @@ const data = {
         linkedin: "https://www.linkedin.com/in/james-lea-baran-0050a429",
         website: "https://jlea.github.io/portfolio/",
         tagline: "Building robust multiplayer systems, advanced AI, and immersive gameplay mechanics.",
-        summary: "Senior Software Engineer with <strong>11+ years of experience</strong> specializing in <strong>C++ gameplay programming and AI architecture</strong>. I've often been described as a \"designer masquerading as a programmer,\" focusing on the <em>feel</em> of the game, not just the code. Proven track record in building robust multiplayer systems and immersive gameplay mechanics."
+        summary: "Senior Unreal Engine Developer with <strong>11+ years of experience</strong> specializing in C++ gameplay programming and game AI architecture. I’ve often been described as a “designer masquerading as a programmer,” focusing on the <em>feel</em> of the game, not just the code. Proven track record in building robust multiplayer systems and immersive gameplay mechanics."
     },
     experience: [
         {
@@ -32,7 +32,7 @@ const data = {
             description: "Engineered core gameplay features and optimization for large-scale projects.",
             points: [
                 "Developed prototypes including an extraction multiplayer shooter and a single-player survival horror game.",
-                "Engineered the 'Towbot' system for Orion Drift, designed for an open-world environment supporting 50+ concurrent clients on Meta Quest 2."
+                "Engineered the ‘Towbot’ system for Orion Drift, designed for an open-world environment supporting 50+ concurrent clients on Meta Quest 2."
             ],
             projects: "Orion Drift (Meta Quest), Unannounced VR & PC shooters"
         },
@@ -44,9 +44,8 @@ const data = {
             projects: "Metro Awakening",
             description: "Primarily working on all stages of development - design, iteration, testing - on a range of prototypes and Metro Awakening.",
             points: [
-                "Architected the shipping hands system for VR interaction.",
                 "Optimized low-level code for mobile VR hardware constraints.",
-                "Developed physics-based hand interactions similar to Boneworks."
+                "Developed physics-based hand interactions similar to Boneworks for immersive interaction with the world."
             ]
         },
         {
@@ -69,7 +68,7 @@ const data = {
             role: "Senior Gameplay Programmer",
             company: "ForwardXP",
             points: [
-                "<strong>Towbot System</strong>: Engineered the 'Towbot' system, designed for an open-world environment supporting 50+ concurrent clients on Meta Quest 2.",
+                "<strong>Towbot System</strong>: Engineered the ‘Towbot’ system, designed for an open-world environment supporting 50+ concurrent clients on Meta Quest 2.",
                 "<strong>Prototyping</strong>: Developed prototypes including an extraction multiplayer shooter and a single-player survival horror game."
             ],
             tech: ["UE5", "VR", "Multiplayer", "Replication", "Meta Quest"],
@@ -173,5 +172,11 @@ const data = {
             title: "Godwoken (Mobile Test)",
             description: "A mobile game test I made during COVID to familiarize myself with mobile games and their limitations."
         }
+    ],
+    impactStats: [
+        { value: "11+", label: "Years Experience" },
+        { value: "5", label: "Shipped Games" },
+        { value: "5", label: "Platforms", detail: "Xbox, PlayStation, PC, Steam Deck, Oculus Quest" },
+        { value: "$75.8M+", label: "Project Revenue" }
     ]
 };

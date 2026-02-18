@@ -103,8 +103,27 @@ function loadSkills() {
     });
 }
 
+// Populate Stats
+function loadStats() {
+    const statsGrid = document.querySelector('.stats-grid');
+    if (!statsGrid || !data.impactStats) return;
+
+    data.impactStats.forEach(stat => {
+        const item = document.createElement('div');
+        item.classList.add('stat-item');
+
+        const detailHtml = stat.detail ? `<div class="stat-detail">${stat.detail}</div>` : '';
+
+        item.innerHTML = `
+            <div class="stat-value">${stat.value}</div>
+            <div class="stat-label">${stat.label}</div>
+            ${detailHtml}
+        `;
+        statsGrid.appendChild(item);
+    });
+}
+
 // Glitch Effect - CSS handled
-// function initGlitch() {}
 
 // Carousel Logic
 function loadCarousel() {
@@ -168,12 +187,36 @@ function loadCarousel() {
 
 document.addEventListener('DOMContentLoaded', () => {
     loadProfile(); // NEW
+    loadStats(); // NEW
     loadExperience(); // NEW
     loadProjects();
     loadSkills();
     loadCarousel();
     initHeroAnimation();
+    initScrollAnimations();
 });
+
+// Scroll Animation Observer
+function initScrollAnimations() {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // Only animate once
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-on-scroll').forEach(el => {
+        observer.observe(el);
+    });
+}
 
 // Hero Background Animation (Grid/Particles)
 function initHeroAnimation() {

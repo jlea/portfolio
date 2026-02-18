@@ -2,17 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;600;800&display=swap');
 
 :root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
+    --bg-color: #f4f4f4;
+    /* Slightly off-white for editorial feel */
+    --text-color: #111111;
     --accent-color: #000000;
     --border-width: 2px;
-    --border-color: #000000;
+    --border-color: #111111;
     --font-display: 'Space Grotesk', sans-serif;
     --font-heading: 'Space Grotesk', sans-serif;
     --font-body: 'Inter', sans-serif;
+
+    /* Animation Tokens */
+    --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+    --transition-fast: 0.2s var(--ease-out-expo);
+    --transition-slow: 0.8s var(--ease-out-expo);
 }
 
-/* ... content unchanged ... */
 
 .hero-canvas {
     position: absolute;
@@ -24,7 +29,6 @@
     opacity: 0.2;
 }
 
-/* ... content unchanged ... */
 
 .project-image img {
     width: 100%;
@@ -46,7 +50,7 @@
 html {
     scroll-behavior: smooth;
     font-size: 12px;
-    /* 75% of 16px */
+    /* Reverted to original per user request */
 }
 
 body {
@@ -54,8 +58,12 @@ body {
     color: var(--text-color);
     font-family: var(--font-body);
     line-height: 1.5;
+    /* Practical Typography: 1.4-1.6 */
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
+    background-image: radial-gradient(#000 0.5px, transparent 0.5px);
+    background-size: 20px 20px;
+    /* Subtle grid texture */
 }
 
 /* Typography */
@@ -92,6 +100,8 @@ h2 {
 p {
     margin-bottom: 1.5rem;
     max-width: 65ch;
+    /* Practical Typography: 45-90 characters */
+    font-weight: 400;
 }
 
 a {
@@ -110,7 +120,6 @@ a {
     background: var(--bg-color);
 }
 
-/* ... unchanged ... */
 
 .navbar {
     display: flex;
@@ -124,7 +133,6 @@ a {
     border-right: var(--border-width) solid var(--border-color);
 }
 
-/* ... unchanged ... */
 
 .project-content h3 {
     font-size: 2.5rem;
@@ -142,7 +150,6 @@ a {
     /* Added spacing */
 }
 
-/* ... unchanged ... */
 
 .main-footer {
     padding: 4rem 2rem;
@@ -222,6 +229,8 @@ a {
     position: relative;
     border-bottom: var(--border-width) solid var(--border-color);
     overflow: hidden;
+    font-size: 1.5rem;
+    /* Explicitly larger for Hero */
 }
 
 .hero-canvas {
@@ -251,6 +260,51 @@ a {
     font-size: 1.25rem;
     font-weight: 600;
     margin-bottom: 3rem;
+}
+
+/* Animations */
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s var(--ease-out-expo);
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stagger-1 {
+    transition-delay: 0.1s;
+    animation-delay: 0.1s;
+}
+
+.stagger-2 {
+    transition-delay: 0.2s;
+    animation-delay: 0.2s;
+}
+
+.stagger-3 {
+    transition-delay: 0.3s;
+    animation-delay: 0.3s;
+}
+
+.animate-in {
+    animation: slideUpFade 1s var(--ease-out-expo) forwards;
+    opacity: 0;
+    transform: translateY(40px);
 }
 
 /* Buttons */
@@ -372,13 +426,14 @@ section:not(:last-child) {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: var(--border-width);
-    background-color: var(--border-color);
-    border: var(--border-width) solid var(--border-color);
+    gap: 1.5rem;
+    /* background-color: var(--border-color); Removed */
+    /* border: var(--border-width) solid var(--border-color); Removed to let cards float */
 }
 
 .project-card {
     background: var(--bg-color);
+    border: var(--border-width) solid var(--border-color);
     padding: 3rem;
     display: flex;
     flex-direction: column;
@@ -398,9 +453,6 @@ section:not(:last-child) {
     margin-bottom: 2rem;
     transition: filter 0.3s;
 }
-
-/* removed empty rule */
-/* Removed duplicate .project-content h3 */
 
 /* Content Grid (About + Experience) */
 .content-grid {
@@ -432,8 +484,6 @@ section:not(:last-child) {
     /* Single column in narrower space */
 }
 
-/* ... existing styles ... */
-
 .project-role {
     display: block;
     /* Stack vertically */
@@ -457,8 +507,6 @@ section:not(:last-child) {
     text-transform: uppercase;
 }
 
-/* Removed duplicate .project-points */
-
 .tech-tag {
     display: inline-block;
     border: 1px solid var(--border-color);
@@ -476,14 +524,15 @@ section:not(:last-child) {
     display: grid;
     /* Setup grid container */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    border: var(--border-width) solid var(--border-color);
-    gap: var(--border-width);
-    background-color: var(--border-color);
+    /* border: var(--border-width) solid var(--border-color); Removed */
+    gap: 1.5rem;
+    /* background-color: var(--border-color); Removed */
     /* Gap color */
 }
 
 .skill-group {
     background: var(--bg-color);
+    border: var(--border-width) solid var(--border-color);
     padding: 2rem;
 }
 
@@ -567,9 +616,6 @@ section:not(:last-child) {
     height: 100%;
 }
 
-/* Footer */
-/* Removed duplicate .main-footer */
-
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
 
@@ -616,5 +662,102 @@ section:not(:last-child) {
         align-items: center;
         gap: 1rem;
         width: 100%;
+    }
+}
+
+/* Stats Section */
+.stats-section {
+    border-bottom: var(--border-width) solid var(--border-color);
+    background: #000 !important;
+    color: #fff !important;
+    padding: 0;
+    width: 100%;
+    display: block;
+    font-size: 1.5rem;
+    /* Explicitly larger for Stats */
+}
+
+.stats-section .container {
+    background: transparent !important;
+    border: none;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+}
+
+.stat-item {
+    padding: 4rem 2rem;
+    text-align: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.stat-item:last-child {
+    border-right: none;
+}
+
+.stat-value {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 5vw, 5rem);
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.stat-label {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    opacity: 0.9;
+}
+
+.stat-detail {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    text-transform: none;
+    margin-top: 0.5rem;
+    opacity: 0.7;
+    max-width: 200px;
+}
+
+@media (max-width: 1024px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .stat-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .stat-item:nth-child(3),
+    .stat-item:nth-child(4) {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-item {
+        border-right: none;
+        padding: 3rem 1rem;
+    }
+
+    .stat-item:last-child {
+        border-bottom: none;
     }
 }
