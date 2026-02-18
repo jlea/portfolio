@@ -174,9 +174,9 @@ const data = {
         }
     ],
     impactStats: [
+        { value: "$75.8M+", label: "Project Revenue" },
         { value: "11+", label: "Years Experience" },
         { value: "5", label: "Shipped Games" },
-        { value: "5", label: "Platforms", detail: "Xbox, PlayStation, PC, Steam Deck, Oculus Quest" },
-        { value: "$75.8M+", label: "Project Revenue" }
+        { value: "5", label: "Platforms", detail: "Xbox, PlayStation, PC, Steam Deck, Oculus Quest" }
     ]
 };
