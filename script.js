@@ -1,87 +1,51 @@
-// Project Data
-const projects = [
-    {
-        title: "TROPPO (Active Development)",
-        role: "Solo Developer",
-        company: "Private Development",
-        points: [
-            "A high-fidelity tactical shooter in UE5.",
-            "<strong>Infinite Scalable Worlds</strong>: Unified PCG and Voxel Plugin to generate scalable infinite worlds at runtime.",
-            "<strong>Advanced AI Ecosystem</strong>: Architected dynamic squad coordination and camp spawning systems driven by Utility AI.",
-            "<strong>Replication-First Inventory</strong>: Engineered a complex weight-based inventory system with recursive containers, optimized for high-volume network replication."
-        ],
-        tech: ["UE5 C++", "PCG Framework", "AI Architecture", "Voxel Plugin", "Replication"],
-        link: "#",
-        image: null // Private project
-    },
-    {
-        title: "Prologue: Go Way Back!",
-        role: "Senior Software Engineer",
-        company: "PLAYERUNKNOWN Productions",
-        points: [
-            "<strong>Inventory System</strong>: Implemented the core inventory management system.",
-            "<strong>Locomotion & Animation</strong>: Integrated ALS and built complex animation systems.",
-            "<strong>Gameplay Prototyping</strong>: Prototyped key features including building and item interaction."
-        ],
-        tech: ["UE5", "Survival Systems", "Open World", "ALS"],
-        link: "https://store.steampowered.com/app/2943740/prologue/",
-        image: "https://cdn.akamai.steamstatic.com/steam/apps/2943740/header.jpg"
-    },
-    {
-        title: "Metro Awakening VR",
-        role: "Senior Programmer",
-        company: "Vertigo Games",
-        points: [
-            "<strong>VR Interaction</strong>: Architected the player hand interaction system, ensuring physical presence and immersive object manipulation.",
-            "<strong>Optimization</strong>: Optimized low-level gameplay systems for Oculus Quest hardware constraints."
-        ],
-        tech: ["VR", "Oculus Quest", "Physics Interaction", "Optimization"],
-        link: "https://store.steampowered.com/app/2669410/Metro_Awakening/",
-        image: "https://cdn.akamai.steamstatic.com/steam/apps/2669410/header.jpg"
-    },
-    {
-        title: "Insurgency: Sandstorm",
-        role: "Lead AI & Gameplay Programmer",
-        company: "New World Interactive",
-        points: [
-            "<strong>AI Architecture</strong>: Sole architect for all enemy AI combatants and their behaviors.",
-            "<strong>Coop Game Logic</strong>: Designed and implemented the cooperative game modes driving the AI.",
-            "<strong>Gameplay & Prototyping</strong>: Prototyped core gamemode systems and mechanics.",
-            "<strong>Vehicle Systems</strong>: Built navigation systems (ground & air), including obstacle avoidance and convoy logic."
-        ],
-        tech: ["UE4", "AI Architecture", "Vehicle Physics", "Multi-Million Seller"],
-        link: "https://store.steampowered.com/app/581320/Insurgency_Sandstorm/",
-        image: "https://cdn.akamai.steamstatic.com/steam/apps/581320/header.jpg"
-    },
-    {
-        title: "Day of Infamy",
-        role: "Gameplay Programmer",
-        company: "New World Interactive",
-        points: [
-            "<strong>Core Gameplay</strong>: Responsible for core gameplay systems and fire-support mechanics.",
-            "<strong>Cooperative Modes</strong>: Designed and implemented cooperative game modes.",
-            "<strong>Networking & Optimization</strong>: Handled client/server networking and console (PS4/Xbox) optimization."
-        ],
-        tech: ["Source Engine", "Networking", "Console Optimization"],
-        link: "https://store.steampowered.com/app/447820/Day_of_Infamy/",
-        image: "https://cdn.akamai.steamstatic.com/steam/apps/447820/header.jpg"
-    }
-];
+// Populate Profile Data
+function loadProfile() {
+    // Populate header info if elements exist
+    // This is optional as most is static, but good for email/links
+    const emailBtn = document.getElementById('contact-email');
+    if (emailBtn) emailBtn.href = `mailto:${data.profile.email}`;
 
-// Skills Data
-const skills = [
-    { category: "Core", items: ["C++", "Unreal Engine 5", "Blueprints", "Object-Oriented Programming"] },
-    { category: "Systems", items: ["Multiplayer Replication", "Gameplay Abilities (GAS)", "AI Logic (Behavior Trees/EQS)", "Inventory Systems"] },
-    { category: "Professional", items: ["Remote-Native Reliability", "Bridge Between Art & Code", "Empathetic Collaboration", "Technical Leadership"] },
-    { category: "Tools", items: ["Perforce", "Git", "Visual Studio", "RenderDoc"] }
-];
+    // Update footer year/name if needed
+    // ...
+}
+
+// Populate Experience
+// Populate Experience
+function loadExperience() {
+    const timeline = document.querySelector('.timeline');
+    if (!timeline) return;
+
+    data.experience.forEach(job => {
+        const item = document.createElement('div');
+        item.classList.add('timeline-item');
+
+        // Extract Start Year (e.g., "Oct 2024" -> "2024")
+        const startYear = job.dates.match(/\d{4}/)?.[0] || job.dates;
+
+        let projectsHtml = '';
+        if (job.projects) {
+            projectsHtml = `<p class="timeline-projects"><strong>Projects:</strong> ${job.projects}</p>`;
+        }
+
+        item.innerHTML = `
+            <div class="timeline-year">${startYear}</div>
+            <div class="timeline-content">
+                <h4 class="timeline-company">${job.company}</h4>
+                <h3 class="timeline-role">${job.role}</h3>
+                <div class="timeline-desc">${job.description}</div>
+                ${projectsHtml}
+            </div>
+        `;
+        timeline.appendChild(item);
+    });
+}
 
 // Populate Projects
 function loadProjects() {
     const projectGrid = document.querySelector('.project-grid');
     if (!projectGrid) return;
 
-    projects.forEach(project => {
+    data.featuredProjects.forEach(project => {
         const card = document.createElement('div');
         card.classList.add('project-card');
 
@@ -106,8 +70,8 @@ function loadProjects() {
             <div class="project-content">
                 <h3>${project.title}</h3>
                 <div class="project-meta">
-                    <span class="project-role">${project.role}</span>
-                    <span class="project-company">${project.company}</span>
+                    <div class="project-role">${project.role}</div>
+                    <div class="project-company">${project.company}</div>
                 </div>
                 <hr class="project-divider">
                 <ul class="project-points">
@@ -125,7 +89,7 @@ function loadSkills() {
     const skillsWrapper = document.querySelector('.skills-wrapper');
     if (!skillsWrapper) return;
 
-    skills.forEach(skillSet => {
+    data.skills.forEach(skillSet => {
         const group = document.createElement('div');
         group.classList.add('skill-group');
 
@@ -142,37 +106,13 @@ function loadSkills() {
 // Glitch Effect - CSS handled
 // function initGlitch() {}
 
-// Video Data (Placeholders)
-const videos = [
-    {
-        id: "zWxUfQrPdVE",
-        title: "Voidbound (RTS Project)",
-        description: "A failed RTS project I built in my spare time. All systems were made by me and was a great learning experience."
-    },
-    {
-        id: "mh3RprF9MyY",
-        title: "Runtime World Generation",
-        description: "Runtime world generation on Unreal Engine 5. A great success unifying PCG and the Voxel Plugin over multiplayer."
-    },
-    {
-        id: "F80eSXD_bsU",
-        title: "VR Tactical Interaction",
-        description: "A VR experiment to work on authentic gun feeling and tactical play."
-    },
-    {
-        id: "rNhZCn_0XLI",
-        title: "Godwoken (Mobile Test)",
-        description: "A mobile game test I made during COVID to familiarize myself with mobile games and their limitations."
-    }
-];
-
 // Carousel Logic
 function loadCarousel() {
     const track = document.querySelector('.carousel-track');
     if (!track) return;
 
     // create slides
-    videos.forEach(video => {
+    data.videos.forEach(video => {
         const slide = document.createElement('li');
         slide.classList.add('carousel-slide');
 
@@ -227,6 +167,8 @@ function loadCarousel() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    loadProfile(); // NEW
+    loadExperience(); // NEW
     loadProjects();
     loadSkills();
     loadCarousel();

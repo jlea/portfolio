@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
-    <script src="script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -25,6 +25,7 @@
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="resume.html" target="_blank">Resume</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -41,6 +42,7 @@
                     </p>
                     <div class="cta-group">
                         <a href="#projects" class="btn primary-btn">View Projects</a>
+                        <a href="resume.html" target="_blank" class="btn secondary-btn">View Resume</a>
                         <a href="#contact" class="btn secondary-btn">Contact Me</a>
                     </div>
                 </div>
@@ -70,53 +72,8 @@
             <section id="experience" class="experience-section">
                 <h2>Experience</h2>
                 <div class="timeline">
-                    <!-- Current -->
-                    <div class="timeline-item">
-                        <div class="timeline-date">Oct 2024 - Present</div>
-                        <div class="timeline-content">
-                            <h3>Senior Software Engineer</h3>
-                            <h4>PLAYERUNKNOWN Productions</h4>
-                            <p>Developing next-gen gameplay systems and prototypes. Specializing in UE5 C++
-                                architecture.</p>
-                        </div>
-                    </div>
-
-                    <!-- ForwardXP -->
-                    <div class="timeline-item">
-                        <div class="timeline-date">Jun 2022 - Oct 2024</div>
-                        <div class="timeline-content">
-                            <h3>Senior Software Engineer</h3>
-                            <h4>ForwardXP</h4>
-                            <p>Engineered core gameplay features and optimization solutions for large-scale projects.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Vertigo -->
-                    <div class="timeline-item">
-                        <div class="timeline-date">Aug 2021 - Jun 2022</div>
-                        <div class="timeline-content">
-                            <h3>Senior Programmer</h3>
-                            <h4>Vertigo Games (Metro Awakening)</h4>
-                            <p>VR Development targeting Oculus Quest. <strong>Architected the shipping hands
-                                    system</strong> for the Metro VR title, focusing on immersive interaction and
-                                physical presence. Optimized low-level code for mobile hardware constraints.</p>
-                        </div>
-                    </div>
-
-                    <!-- New World -->
-                    <div class="timeline-item">
-                        <div class="timeline-date">May 2016 - Jul 2019</div>
-                        <div class="timeline-content">
-                            <h3>Lead AI & Gameplay Programmer</h3>
-                            <h4>New World Interactive (Insurgency: Sandstorm)</h4>
-                            <p>Designed and implemented all enemy AI combatants. Built vehicle navigation systems
-                                (ground & air) and managed the AI engineering team.</p>
-                        </div>
-                    </div>
+                    <!-- Timeline items populated by JS -->
                 </div>
-            </section>
-
             </section>
         </div>
 
@@ -157,12 +114,13 @@
 
         <section id="contact" class="contact-section">
             <div class="container contact-content">
-                <h2 class="section-title">Get In Touch</h2>
-                <p>Open for opportunities. Let's build something next-gen.</p>
+                <h2>Get In Touch</h2>
+                <p>Always open to discussing new opportunities, interesting projects, or just chatting about game dev.
+                </p>
                 <div class="social-buttons">
-                    <a href="mailto:contact@example.com" class="btn primary-btn">Send Email</a>
-                    <a href="#" target="_blank" class="btn secondary-btn">LinkedIn</a>
-                    <a href="#" target="_blank" class="btn secondary-btn">GitHub</a>
+                    <a href="mailto:james.c.lea@gmail.com" class="btn primary-btn" id="contact-email">Email Me</a>
+                    <a href="https://www.linkedin.com/in/james-lea-baran-0050a429" target="_blank"
+                        class="btn secondary-btn" id="contact-linkedin">LinkedIn</a>
                 </div>
             </div>
         </section>
@@ -171,6 +129,9 @@
     <footer class="main-footer">
         <p>&copy; 2026 James Lea-Baran. Built with vanilla code.</p>
     </footer>
+
+    <script src="data.js"></script> <!-- Load data first -->
+    <script src="script.js" defer></script>
 </body>
 
 </html>
