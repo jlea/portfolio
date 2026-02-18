@@ -45,7 +45,8 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 16px;
+    font-size: 12px;
+    /* 75% of 16px */
 }
 
 body {
@@ -100,12 +101,61 @@ a {
 
 /* Layout Container */
 .container {
-    max-width: 1600px;
+    max-width: 1200px;
+    /* Reduced from 1600px */
     margin: 0 auto;
     padding: 0 2rem;
     border-left: var(--border-width) solid var(--border-color);
     border-right: var(--border-width) solid var(--border-color);
     background: var(--bg-color);
+}
+
+/* ... unchanged ... */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    max-width: 1200px;
+    /* Reduced from 1600px */
+    margin: 0 auto;
+    border-left: var(--border-width) solid var(--border-color);
+    border-right: var(--border-width) solid var(--border-color);
+}
+
+/* ... unchanged ... */
+
+.project-content h3 {
+    font-size: 2.5rem;
+    /* Increased from 2rem */
+    margin-bottom: 1rem;
+}
+
+.project-points {
+    font-size: 1.1rem;
+    /* Increased base text */
+    list-style: square;
+    padding-left: 1.5rem;
+    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+    /* Added spacing */
+}
+
+/* ... unchanged ... */
+
+.main-footer {
+    padding: 4rem 2rem;
+    border-top: var(--border-width) solid var(--border-color);
+    border-left: var(--border-width) solid var(--border-color);
+    border-right: var(--border-width) solid var(--border-color);
+    max-width: 1200px;
+    /* Reduced from 1600px */
+    margin: 0 auto;
+    text-align: center;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 /* Header & Nav */
@@ -117,16 +167,7 @@ a {
     background: var(--bg-color);
 }
 
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 2rem;
-    max-width: 1600px;
-    margin: 0 auto;
-    border-left: var(--border-width) solid var(--border-color);
-    border-right: var(--border-width) solid var(--border-color);
-}
+/* Removed duplicate .navbar */
 
 .logo {
     font-family: var(--font-display);
@@ -359,10 +400,7 @@ section:not(:last-child) {
 }
 
 /* removed empty rule */
-.project-content h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
+/* Removed duplicate .project-content h3 */
 
 /* Content Grid (About + Experience) */
 .content-grid {
@@ -419,11 +457,7 @@ section:not(:last-child) {
     text-transform: uppercase;
 }
 
-.project-points {
-    list-style: square;
-    padding-left: 1.5rem;
-    margin-bottom: 2rem;
-}
+/* Removed duplicate .project-points */
 
 .tech-tag {
     display: inline-block;
@@ -534,18 +568,7 @@ section:not(:last-child) {
 }
 
 /* Footer */
-.main-footer {
-    padding: 4rem 2rem;
-    border-top: var(--border-width) solid var(--border-color);
-    border-left: var(--border-width) solid var(--border-color);
-    border-right: var(--border-width) solid var(--border-color);
-    max-width: 1600px;
-    margin: 0 auto;
-    text-align: center;
-    font-family: var(--font-heading);
-    font-weight: 700;
-    text-transform: uppercase;
-}
+/* Removed duplicate .main-footer */
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {

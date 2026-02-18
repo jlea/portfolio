@@ -7,7 +7,7 @@ const data = {
         location: "Lisbon, Portugal",
         linkedin: "https://www.linkedin.com/in/james-lea-baran-0050a429",
         tagline: "Building robust multiplayer systems, advanced AI, and immersive gameplay mechanics.",
-        summary: "Senior Software Engineer with <strong>11+ years of experience</strong> specializing in <strong>C++ gameplay programming and AI architecture</strong>. A \"designer masquerading as a programmer,\" focusing on the <em>feel</em> of the game, not just the code. Proven track record in building robust multiplayer systems and immersive gameplay mechanics."
+        summary: "Senior Software Engineer with <strong>11+ years of experience</strong> specializing in <strong>C++ gameplay programming and AI architecture</strong>. I've often been described as a \"designer masquerading as a programmer,\" focusing on the <em>feel</em> of the game, not just the code. Proven track record in building robust multiplayer systems and immersive gameplay mechanics."
     },
     experience: [
         {
@@ -138,7 +138,7 @@ const data = {
         engines: "Unreal Engine 5, Unreal Engine 4, CryEngine 3, Source Engine",
         languages: "C++, C# (.NET), Python, CSS, HTML, PHP",
         tools: "Perforce, Git, SVN, Visual Studio, Jira",
-        specialties: "AI Architecture, Multiplayer Systems, Physics Simulation, VR Interaction"
+        specialties: "Game AI Architecture, Multiplayer Systems, Physics Simulation, VR Interaction, PCG, Voxels, Profiling & Optimization"
     },
     education: {
         degree: "Bachelor of Information Technology",
