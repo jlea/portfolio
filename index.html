@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>James Lea-Baran | Senior UE5 C++ Developer | Remote Freelance (EU/US)</title>
+    <title>James Lea-Baran | Senior Gameplay Engineer | Remote Freelance (EU/US)</title>
     <meta name="description"
         content="Senior Gameplay Programmer & AI Architect with 11+ years in AAA/Indie (Unreal Engine 5, C++). Available for remote freelance/temporary contracts in Europe & US.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jlea.github.io/portfolio/">
-    <meta property="og:title" content="James Lea-Baran | Senior UE5 C++ Developer">
+    <meta property="og:title" content="James Lea-Baran | Senior Gameplay Engineer">
     <meta property="og:description"
         content="Senior Gameplay Programmer specializing in Multiplayer Replication, Gameplay Systems, and AI.">
     <meta property="og:image" content="images/orion-drift.webp">
@@ -19,7 +19,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://jlea.github.io/portfolio/">
-    <meta property="twitter:title" content="James Lea-Baran | Senior UE5 C++ Developer">
+    <meta property="twitter:title" content="James Lea-Baran | Senior Gameplay Engineer">
     <meta property="twitter:description"
         content="Senior Gameplay Programmer specializing in Multiplayer Replication, Gameplay Systems, and AI.">
     <meta property="twitter:image" content="images/orion-drift.webp">
@@ -41,7 +41,9 @@
     }
     </script>
 
-    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <link rel="stylesheet" href="swiss-style.css"> -->
+    <link rel="stylesheet" href="bento-style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
@@ -51,82 +53,95 @@
 <body>
     <div class="background-overlay"></div>
 
-    <header class="main-header">
-        <nav class="navbar">
-            <div class="logo">JLB<span class="highlight">.dev</span></div>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="resume.html" target="_blank">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="layout-container">
+        
+        <!-- Sticky Left Sidebar -->
+        <aside class="sidebar bento-card">
+            <div class="sidebar-info">
+                <div class="avatar-box">
+                    <img src="images/headshot.jpg" alt="James Lea-Baran">
+                </div>
+                <div class="info-content">
+                    <h1 class="name" style="font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 800;">James Lea-Baran</h1>
+                    <p class="title" style="background: var(--bg-color); padding: 0.25rem 0.75rem; border-radius: 8px; display: inline-block; font-size: 0.875rem; font-weight: 600; color: var(--accent-color);">Senior Gameplay Engineer</p>
+                </div>
+            </div>
 
-    <main>
-        <section id="hero" class="hero-section">
-            <div class="container hero-container">
-                <div class="hero-content">
-                    <h1 class="animate-in stagger-1">A <span class="highlight">decade</span> of experience in Unreal
-                        Engine</h1>
-                    <p class="tagline animate-in stagger-3">
-                        I build robust multiplayer systems, immersive gameplay mechanics, and endlessly replayable AI.
-                    </p>
-                    <div class="cta-group animate-in stagger-3">
-                        <a href="mailto:james.c.lea@gmail.com" class="btn primary-btn">Apply to work with me</a>
+            <hr class="separator">
+
+            <div class="sidebar-contacts">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-info">
+                        <span class="contact-title">Email</span>
+                        <a href="mailto:james.c.lea@gmail.com" class="contact-link">james.c.lea@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-info">
+                        <span class="contact-title">Location</span>
+                        <address>Lisbon, Portugal (Remote)</address>
                     </div>
                 </div>
             </div>
+            
+            <hr class="separator">
+            
+            <div class="social-list">
+                <a href="https://www.linkedin.com/in/james-lea-baran-0050a429" target="_blank" class="social-link">LinkedIn</a>
+                <a href="https://github.com/jlea" target="_blank" class="social-link">GitHub</a>
+                <a href="resume.html" target="_blank" class="social-link">Resume</a>
+            </div>
+        </aside>
 
-        </section>
+        <!-- Main Scrolling Content -->
+        <main class="main-content bento-card">
+            
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="#about" class="active">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#media">Media</a></li>
+                    <li><a href="resume.html" target="_blank">Resume</a></li>
+                </ul>
+            </nav>
 
-        <section id="stats" class="stats-section reveal-on-scroll">
-            <div class="container">
-                <div class="stats-grid">
+            <!-- Intro (Replacing Hero) -->
+            <section id="about" class="content-section active">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-text">
+                    <p>I am a Senior Gameplay Engineer based in <strong>Lisbon</strong>, available for <strong>remote freelance contracts</strong> worldwide. With over <strong>11 years of industry experience</strong>, my core expertise lies in C++ gameplay programming and AI architecture.</p>
+                    <p>I’ve often been described as a <strong>“designer masquerading as a programmer”</strong>. That is to say, I care deeply about the <em>feel</em> of the game, not just the code behind it.</p>
+                    <p>I started modding <strong>Starsiege: Tribes</strong> when I was 12. Then I moved over to <strong>Counter-Strike 1.6</strong> map making, and eventually Source modding & Gmod. I have touched literally every genre of game development and every gameplay mechanic. Seriously. I've worked with Torque 3D and CryEngine 3, and I am intimately familiar with all low-level engine concepts, as well as mobile and VR development.</p>
+                </div>
+                
+                <h3 class="subsection-title" style="margin-top: 2rem;">What I bring to the table</h3>
+                <div class="stats-grid" style="margin-top: 1rem;">
                     <!-- Dynamic Content populated by JS -->
                 </div>
-            </div>
-        </section>
 
-        <div class="container content-grid">
-            <!-- About Section -->
-            <section id="about" class="about-section reveal-on-scroll">
-                <h2>About Me</h2>
-                <div class="about-text">
-                    <p>I am a Senior Software Engineer based in <strong>Lisbon</strong>, available for <strong>remote
-                            freelance contracts</strong> worldwide. With over <strong>11 years of industry
-                            experience</strong>, my core expertise lies in C++ gameplay programming and AI
-                        architecture.</p>
-                    <p>I’ve often been described as a <strong>“designer masquerading as a
-                            programmer”</strong>. That is to say, I care deeply about the <em>feel</em> of the game, not
-                        just the code
-                        behind it.</p>
-                    <p>I started in the modding scene for Half-Life 2, and I pride myself on being a reliable,
-                        autonomous remote worker who fosters a
-                        friendly and collaborative environment (us modders in 2004 were doing that before it was
-                        mainstream). </p>
-                    <p>Whether leading a team or working solo, I focus on clear
-                        communication and building systems that empower designers and artists.</p>
-                    <p>Currently working with <strong>PLAYERUNKNOWN Productions</strong> on next-generation experiences.
-                    </p>
-                </div>
-            </section>
-
-            <!-- Experience Section -->
-            <section id="experience" class="experience-section reveal-on-scroll">
-                <h2>Experience</h2>
-                <div class="timeline">
+                <h3 class="subsection-title" style="margin-top: 3rem;">Experience</h3>
+                <div class="timeline" style="margin-top: 1.5rem;">
                     <!-- Timeline items populated by JS -->
                 </div>
-            </section>
-        </div>
 
-        <section id="media" class="media-section reveal-on-scroll">
-            <div class="container">
-                <h2 class="section-title">Media</h2>
-                <div class="carousel-container">
+                <h3 class="subsection-title" style="margin-top: 3rem;">Technical Skills</h3>
+                <div class="skills-wrapper" style="margin-top: 1.5rem;">
+                    <!-- Dynamic Content populated by JS -->
+                </div>
+            </section>
+
+            <section id="projects" class="content-section">
+                <h2 class="section-title">Shipped Projects</h2>
+                <div class="project-grid">
+                    <!-- Dynamic Content populated by JS -->
+                </div>
+            </section>
+
+            <section id="media" class="content-section">
+                <h2 class="section-title">Media Showcase</h2>
+                <div class="carousel-container" style="margin-bottom: 3rem;">
                     <button class="carousel-btn prev-btn" aria-label="Previous Slide">&lt;</button>
                     <div class="carousel-track-container">
                         <ul class="carousel-track">
@@ -135,47 +150,10 @@
                     </div>
                     <button class="carousel-btn next-btn" aria-label="Next Slide">&gt;</button>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section id="projects" class="projects-section reveal-on-scroll">
-            <div class="container">
-                <h2 class="section-title">Shipped Projects</h2>
-                <div class="project-grid">
-                    <!-- Dynamic Content populated by JS -->
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="skills-section reveal-on-scroll">
-            <div class="container">
-                <h2 class="section-title">Technical Skills</h2>
-                <div class="skills-wrapper">
-                    <!-- Dynamic Content populated by JS -->
-                </div>
-            </div>
-        </section>
-
-
-
-        <section id="contact" class="contact-section reveal-on-scroll">
-            <div class="container contact-content">
-                <h2>Get In Touch</h2>
-                <p>Always open to discussing new opportunities, interesting projects, or just chatting about game dev.
-                </p>
-                <div class="social-buttons">
-                    <a href="mailto:james.c.lea@gmail.com" class="btn primary-btn" id="contact-email">Email Me</a>
-                    <a href="https://www.linkedin.com/in/james-lea-baran-0050a429" target="_blank"
-                        class="btn secondary-btn" id="contact-linkedin">LinkedIn</a>
-                    <a href="resume.html" target="_blank" class="btn secondary-btn">View Resume</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="main-footer">
-        <p>&copy; 2026 James Lea-Baran. Built with vanilla code.</p>
-    </footer>
+        </main>
+    </div>
 
     <script src="data.js"></script> <!-- Load data first -->
     <script src="script.js" defer></script>

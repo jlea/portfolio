@@ -1,20 +1,20 @@
 const data = {
     profile: {
         name: "James Lea-Baran",
-        role: "Senior Unreal Engine 5 Developer",
+        role: "Senior Gameplay Engineer",
         email: "james.c.lea@gmail.com",
         phone: "(+351) 934 386 385",
         location: "Lisbon, Portugal",
         linkedin: "https://www.linkedin.com/in/james-lea-baran-0050a429",
         website: "https://jlea.github.io/portfolio/",
         tagline: "Building robust multiplayer systems, advanced AI, and immersive gameplay mechanics.",
-        summary: "Senior Unreal Engine Developer with <strong>11+ years of experience</strong> specializing in C++ gameplay programming and game AI architecture. I’ve often been described as a “designer masquerading as a programmer,” focusing on the <em>feel</em> of the game, not just the code. Proven track record in building robust multiplayer systems and immersive gameplay mechanics."
+        summary: "Senior Gameplay Engineer with <strong>11+ years of experience</strong> specializing in C++ gameplay programming and game AI architecture. I’ve often been described as a “designer masquerading as a programmer,” focusing on the <em>feel</em> of the game, not just the code. Proven track record in building robust multiplayer systems and immersive gameplay mechanics."
     },
     experience: [
         {
             company: "PLAYERUNKNOWN Productions",
-            role: "Senior Gameplay Programmer",
-            dates: "Oct 2024 - Present",
+            role: "Senior Gameplay Engineer",
+            dates: "Oct 2024 - Mar 2026",
             location: "Remote",
             projects: "Prologue: Go Way Back!",
             description: "Developing next-gen gameplay systems and prototypes specializing in UE5 C++ architecture.",
@@ -26,7 +26,7 @@ const data = {
         },
         {
             company: "ForwardXP",
-            role: "Senior Gameplay Programmer",
+            role: "Senior Gameplay Engineer",
             dates: "June 2022 - Oct 2024",
             location: "Remote",
             description: "Engineered core gameplay features and optimization for large-scale projects.",
@@ -38,13 +38,13 @@ const data = {
         },
         {
             company: "Vertigo Games",
-            role: "Senior Gameplay Programmer",
+            role: "Senior Gameplay Engineer",
             dates: "Aug 2019 - June 2022",
             location: "Amsterdam, NL",
             projects: "Metro Awakening",
-            description: "Primarily working on all stages of development - design, iteration, testing - on a range of prototypes and Metro Awakening.",
+            description: "Primarily working on all stages of development - design, iteration, testing - on a range of prototypes for Meta and Metro Awakening.",
             points: [
-                "Optimized low-level code for mobile VR hardware constraints.",
+                "Optimized low-level code for mobile VR hardware constraints (forward rendering, tight GPU/CPU budgets).",
                 "Developed physics-based hand interactions similar to Boneworks for immersive interaction with the world."
             ]
         },
@@ -65,7 +65,7 @@ const data = {
     featuredProjects: [
         {
             title: "Orion Drift",
-            role: "Senior Gameplay Programmer",
+            role: "Senior Gameplay Engineer",
             company: "ForwardXP",
             points: [
                 "<strong>Towbot System</strong>: Engineered the ‘Towbot’ system, designed for an open-world environment supporting 50+ concurrent clients on Meta Quest 2.",
@@ -77,7 +77,7 @@ const data = {
         },
         {
             title: "Prologue: Go Way Back!",
-            role: "Senior Gameplay Programmer",
+            role: "Senior Gameplay Engineer",
             company: "PLAYERUNKNOWN Productions",
             points: [
                 "<strong>Inventory System</strong>: Implemented the core inventory management system.",
@@ -90,7 +90,7 @@ const data = {
         },
         {
             title: "Metro Awakening VR",
-            role: "Senior Gameplay Programmer",
+            role: "Senior Gameplay Engineer",
             company: "Vertigo Games",
             points: [
                 "<strong>VR Interaction</strong>: Architected the player hand interaction system, ensuring physical presence and immersive object manipulation.",
@@ -174,7 +174,7 @@ const data = {
         }
     ],
     impactStats: [
-        { value: "$75.8M+", label: "Project Revenue" },
+        { value: "6M+", label: "Players Reached" },
         { value: "11+", label: "Years Experience" },
         { value: "5", label: "Shipped Games" },
         { value: "5", label: "Platforms", detail: "Xbox, PlayStation, PC, Steam Deck, Oculus Quest" }

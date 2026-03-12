@@ -1,3 +1,37 @@
+// --- Tab Navigation System for vCard Layout ---
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const contentSections = document.querySelectorAll('.content-section');
+
+    navLinks.forEach(link => {
+        if (link.getAttribute('href').startsWith('#')) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // 1. Remove active class from all links
+                navLinks.forEach(nav => nav.classList.remove('active'));
+                
+                // 2. Add active class to clicked link
+                this.classList.add('active');
+                
+                // 3. Hide all sections
+                contentSections.forEach(section => section.classList.remove('active'));
+                
+                // 4. Show target section
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                    // Scroll to top of main content on mobile
+                    if (window.innerWidth <= 1024) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        }
+    });
+});
+
 // Populate Profile Data
 function loadProfile() {
     // Populate header info if elements exist
@@ -9,7 +43,6 @@ function loadProfile() {
     // ...
 }
 
-// Populate Experience
 // Populate Experience
 function loadExperience() {
     const timeline = document.querySelector('.timeline');
@@ -23,8 +56,28 @@ function loadExperience() {
         const startYear = job.dates.match(/\d{4}/)?.[0] || job.dates;
 
         let projectsHtml = '';
+        let imagesHtml = '';
+
         if (job.projects) {
             projectsHtml = `<p class="timeline-projects"><strong>Projects:</strong> ${job.projects}</p>`;
+            
+            // Look up matching project images
+            const matchedImages = [];
+            data.featuredProjects.forEach(fp => {
+                // simple fuzzy match: check if featured project title is in the job.projects string
+                if (job.projects.toLowerCase().includes(fp.title.toLowerCase().replace(' vr', ''))) {
+                    if (fp.image) matchedImages.push({ img: fp.image, link: fp.link });
+                }
+            });
+
+            if (matchedImages.length > 0) {
+                const imgTags = matchedImages.map(item => `
+                    <a href="${item.link}" target="_blank" rel="noopener noreferrer">
+                        <img src="${item.img}" alt="Project Thumbnail" class="timeline-thumbnail">
+                    </a>
+                `).join('');
+                imagesHtml = `<div class="timeline-thumbnails">${imgTags}</div>`;
+            }
         }
 
         item.innerHTML = `
@@ -34,6 +87,7 @@ function loadExperience() {
                 <h3 class="timeline-role">${job.role}</h3>
                 <div class="timeline-desc">${job.description}</div>
                 ${projectsHtml}
+                ${imagesHtml}
             </div>
         `;
         timeline.appendChild(item);

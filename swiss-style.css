@@ -1,0 +1,512 @@
+/* Swiss Design (International Typographic Style) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    --bg-color: #fcfcfc; /* Softer white */
+    --text-color: #2b2b2b; /* Softer, dark gray */
+    --accent-color: #c9000d; /* Slightly muted red */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    
+    /* Animation Tokens */
+    --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+/* Base & Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 15px; /* Slightly smaller base font */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700; /* Less heavy */
+    line-height: 1.1; /* slightly more relaxed */
+    letter-spacing: -0.02em; /* Less tight tracking */
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: clamp(3rem, 7vw, 6rem); /* Reduced maximum size */
+    font-weight: 800; /* Distinct slightly heavier for h1, but still softer than 900 */
+    margin-bottom: 2rem;
+    max-width: 1200px;
+    color: #1a1a1a;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3.5rem); /* Reduced maximum size */
+    margin-bottom: 3.5rem;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.15rem; /* slightly smaller body text */
+    max-width: 65ch;
+    margin-bottom: 2rem;
+    font-weight: 400;
+    color: #4a4a4a; /* Lighter gray for paragraphs */
+    line-height: 1.6;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+strong {
+    font-weight: 600; /* softer bold */
+    color: #1a1a1a;
+}
+
+/* Layout Container */
+.container {
+    max-width: 1200px; /* Reduced container width */
+    margin: 0 auto;
+    padding: 0 2rem; /* Less extreme padding */
+}
+
+section {
+    padding: 6rem 0; /* Reduced vertical padding */
+}
+
+/* Header & Nav */
+.main-header {
+    padding: 2rem 0;
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* matched container */
+    margin: 0 auto;
+    padding: 0 2rem; /* matched container */
+}
+
+.logo {
+    font-size: 1.5rem; /* softer logo */
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #1a1a1a;
+}
+
+.logo .highlight {
+    color: var(--accent-color);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem; /* reduced gap */
+}
+
+.nav-links a {
+    font-weight: 500; /* softer nav weight */
+    font-size: 1rem;
+    letter-spacing: 0;
+    color: #4a4a4a; /* softer nav color */
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 8rem 0 6rem; /* reduced padding */
+    min-height: 70vh; /* less extreme height */
+    display: flex;
+    align-items: center;
+}
+
+.tagline {
+    font-size: 1.25rem; /* much softer tagline */
+    font-weight: 400;
+    max-width: 700px;
+    line-height: 1.5;
+    margin-bottom: 3.5rem;
+    color: #555;
+}
+
+.hero-canvas {
+    display: none; /* Hide for cleaner look, or maybe keep it faintly? Let's hide */
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 1.25rem 3rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    margin-right: 1.5rem;
+}
+
+.primary-btn {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.primary-btn:hover {
+    background: var(--accent-color);
+}
+
+.secondary-btn {
+    background: transparent;
+    color: var(--text-color);
+    border-bottom: 4px solid var(--text-color);
+    padding: 0.5rem 0;
+}
+
+.secondary-btn:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+/* Stats Section */
+.stats-section {
+    background: #f0f0f0; /* Soft gray instead of stark black */
+    color: var(--text-color); /* Dark text instead of white */
+    padding: 4rem 0; /* Reduced padding */
+    border-top: 1px solid #e0e0e0; /* Subtle separation */
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem; /* Reduced gap */
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-value {
+    font-size: clamp(2.5rem, 4vw, 4rem); /* Significantly reduced size */
+    font-weight: 800; /* reduced weight */
+    line-height: 1;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em; /* less tight */
+}
+
+.stat-label {
+    font-size: 1.1rem; /* reduced size */
+    font-weight: 600; /* reduced weight */
+    letter-spacing: 0;
+    margin-bottom: 0.25rem;
+    color: #1a1a1a;
+}
+
+.stat-detail {
+    font-size: 0.95rem; /* slightly larger for readability */
+    color: #666; /* softer gray */
+}
+
+/* Content Grid (About + Experience) */
+.content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem; /* reduced gap */
+    max-width: 1200px; /* matched container */
+    margin: 0 auto;
+    padding: 6rem 2rem; /* reduced padding */
+}
+
+@media (min-width: 1024px) {
+    .content-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem; /* Still distinct columns, but less aggressive */
+    }
+}
+
+.content-grid section {
+    padding: 0;
+}
+
+.about-text {
+    line-height: 1.6;
+}
+
+/* Timeline */
+.timeline-item {
+    display: grid;
+    grid-template-columns: 100px 1fr; /* Reduced left column width */
+    gap: 2rem; /* reduced gap */
+    margin-bottom: 4rem; /* reduced margin */
+}
+
+.timeline-year {
+    font-size: 1.5rem; /* Significantly reduced from 2.5rem */
+    font-weight: 700; /* Softened weight */
+    color: #1a1a1a; /* Changed from red to dark gray for subtlety */
+    line-height: 1.2;
+}
+
+.timeline-role {
+    font-size: 1.75rem; /* Reduced from 2.5rem */
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+    font-weight: 700;
+}
+
+.timeline-company {
+    font-size: 1.1rem; /* slightly smaller */
+    font-weight: 500; /* softened */
+    color: var(--accent-color); /* Using the accent color here instead for pop */
+    margin-bottom: 1rem;
+    text-transform: none; /* Removed uppercase */
+    letter-spacing: 0;
+}
+
+.timeline-desc {
+    font-size: 1.15rem; /* Made same as normal paragraphs */
+    color: #4a4a4a; /* matched normal paragraphs */
+    margin-bottom: 1rem;
+    max-width: 60ch;
+    line-height: 1.6;
+}
+
+.timeline-projects {
+    font-size: 0.95rem; /* softer */
+    color: #777;
+    font-style: normal; /* Removed italic */
+}
+
+/* Projects */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* slightly smaller minimum */
+    gap: 3rem; /* reduced gap */
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.project-image img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    margin-bottom: 2rem;
+    background: #f4f4f4;
+}
+
+.project-content h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.project-company {
+    display: block;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #666;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.project-role {
+    display: inline-block;
+    background: var(--text-color);
+    color: var(--bg-color);
+    padding: 0.25rem 0.75rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.project-points {
+    font-size: 1.1rem;
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    color: #333;
+}
+
+.tech-tag {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    background: #f4f4f4;
+    padding: 0.4rem 1rem;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+/* Skills */
+.skills-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 4rem;
+}
+
+.skill-group h3 {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+}
+
+.skill-item {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 600;
+    padding: 1rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+/* Carousel/Media */
+.carousel-container {
+    position: relative;
+    margin-top: 3rem;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--text-color);
+    color: var(--bg-color);
+    border: none;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 10;
+    transition: background 0.2s;
+}
+
+.carousel-btn:hover {
+    background: var(--accent-color);
+}
+
+.prev-btn { left: -30px; }
+.next-btn { right: -30px; }
+
+.carousel-track-container {
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s var(--ease-out-expo);
+    list-style: none;
+}
+
+.carousel-slide {
+    min-width: 100%;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    background: #f4f4f4;
+    margin-bottom: 1rem;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Contact */
+.contact-section {
+    background: #f9f9f9;
+}
+
+.contact-content h2 {
+    margin-bottom: 2rem;
+}
+
+.social-buttons {
+    margin-top: 3rem;
+}
+
+/* Footer */
+.main-footer {
+    padding: 4rem;
+    text-align: center;
+    font-weight: 600;
+    color: #999;
+}
+
+/* Animations */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s var(--ease-out-expo);
+}
+
+.reveal-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animate-in {
+    animation: slideUpFade 1.2s var(--ease-out-expo) forwards;
+    opacity: 0;
+    transform: translateY(60px);
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .container { padding: 0 2rem; }
+    .navbar { padding: 0 2rem; flex-direction: column; gap: 1.5rem; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.5rem; }
+    .timeline-item { grid-template-columns: 1fr; gap: 1rem; }
+    .timeline-year { font-size: 2rem; margin-bottom: 1rem; }
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    .project-grid { grid-template-columns: 1fr; }
+    .prev-btn { left: 0; }
+    .next-btn { right: 0; }
+}
