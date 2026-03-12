@@ -19,7 +19,7 @@ function loadResume() {
             <span class="separator">•</span>
             <span>${data.profile.phone}</span>
             <span class="separator">•</span>
-            <span><a href="${data.profile.website}" target="_blank">jlea.github.io/portfolio</a></span>
+            <span><a href="${data.profile.website}" target="_blank">jlb.dev</a></span>
         </div>
     `;
     container.appendChild(header);

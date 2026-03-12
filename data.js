@@ -6,7 +6,7 @@ const data = {
         phone: "(+351) 934 386 385",
         location: "Lisbon, Portugal",
         linkedin: "https://www.linkedin.com/in/james-lea-baran-0050a429",
-        website: "https://jlea.github.io/portfolio/",
+        website: "https://jlb.dev",
         tagline: "Building robust multiplayer systems, advanced AI, and immersive gameplay mechanics.",
         summary: "Senior Gameplay Engineer with <strong>11+ years of experience</strong> specializing in C++ gameplay programming and game AI architecture. I’ve often been described as a “designer masquerading as a programmer,” focusing on the <em>feel</em> of the game, not just the code. Proven track record in building robust multiplayer systems and immersive gameplay mechanics."
     },
