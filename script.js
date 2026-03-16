@@ -66,15 +66,18 @@ function loadExperience() {
             data.featuredProjects.forEach(fp => {
                 // simple fuzzy match: check if featured project title is in the job.projects string
                 if (job.projects.toLowerCase().includes(fp.title.toLowerCase().replace(' vr', ''))) {
-                    if (fp.image) matchedImages.push({ img: fp.image, link: fp.link });
+                    if (fp.image) matchedImages.push({ img: fp.image, link: fp.link, date: fp.releaseDate });
                 }
             });
 
             if (matchedImages.length > 0) {
-                const imgTags = matchedImages.map(item => `
-                    <a href="${item.link}" target="_blank" rel="noopener noreferrer">
-                        <img src="${item.img}" alt="Project Thumbnail" class="timeline-thumbnail">
-                    </a>
+                const imgTags = matchedImages.map(proj => `
+                    <div class="thumbnail-wrapper">
+                        <a href="${proj.link}" target="_blank" rel="noopener noreferrer">
+                            <img src="${proj.img}" alt="Project Thumbnail" class="timeline-thumbnail">
+                            <span class="date-overlay">${proj.date}</span>
+                        </a>
+                    </div>
                 `).join('');
                 imagesHtml = `<div class="timeline-thumbnails">${imgTags}</div>`;
             }
@@ -121,7 +124,10 @@ function loadProjects() {
         card.innerHTML = `
             ${imageHtml}
             <div class="project-content">
-                <h3>${project.title}</h3>
+                <div class="project-header" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;">
+                    <h3>${project.title}</h3>
+                    <span class="project-tag-date">${project.releaseDate}</span>
+                </div>
                 <div class="project-meta">
                     <div class="project-role">${project.role}</div>
                     <div class="project-company">${project.company}</div>

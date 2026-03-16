@@ -64,56 +64,8 @@ const data = {
     ],
     featuredProjects: [
         {
-            title: "Orion Drift",
-            role: "Senior Gameplay Engineer",
-            company: "ForwardXP",
-            points: [
-                "<strong>Towbot System</strong>: Engineered the ‘Towbot’ system, designed for an open-world environment supporting 50+ concurrent clients on Meta Quest 2.",
-                "<strong>Prototyping</strong>: Developed prototypes including an extraction multiplayer shooter and a single-player survival horror game."
-            ],
-            tech: ["UE5", "VR", "Multiplayer", "Replication", "Meta Quest"],
-            link: "https://www.meta.com/en-gb/experiences/orion-drift/7181769438517329",
-            image: "images/orion-drift.webp"
-        },
-        {
-            title: "Please, Don't Touch Anything VR",
-            role: "Senior Gameplay Engineer",
-            company: "ForwardXP",
-            points: [
-                "<strong>Gameplay Systems</strong>: Implementation of core interaction mechanics and puzzle logic for the VR adaptation.",
-                "<strong>Multi-Platform Support</strong>: Ensured consistent gameplay feeling across various VR headsets and controllers."
-            ],
-            tech: ["UE4", "VR", "Puzzle Systems", "Interaction Design"],
-            link: "https://www.meta.com/experiences/please-dont-touch-anything/2706567592751319/",
-            image: "images/pdta.webp"
-        },
-        {
-            title: "Prologue: Go Way Back!",
-            role: "Senior Gameplay Engineer",
-            company: "PLAYERUNKNOWN Productions",
-            points: [
-                "<strong>Inventory System</strong>: Implemented the core inventory management system.",
-                "<strong>Locomotion & Animation</strong>: Integrated ALS and built complex animation systems.",
-                "<strong>Gameplay Prototyping</strong>: Prototyped key features including building and item interaction."
-            ],
-            tech: ["UE5", "Survival Systems", "Open World", "ALS"],
-            link: "https://store.steampowered.com/app/2943740/prologue/",
-            image: "https://cdn.akamai.steamstatic.com/steam/apps/2943740/header.jpg"
-        },
-        {
-            title: "Metro Awakening VR",
-            role: "Senior Gameplay Engineer",
-            company: "Vertigo Games",
-            points: [
-                "<strong>VR Interaction</strong>: Architected the player hand interaction system, ensuring physical presence and immersive object manipulation.",
-                "<strong>Optimization</strong>: Optimized low-level gameplay systems for Oculus Quest hardware constraints."
-            ],
-            tech: ["VR", "Oculus Quest", "Physics Interaction", "Optimization"],
-            link: "https://store.steampowered.com/app/2669410/Metro_Awakening/",
-            image: "https://cdn.akamai.steamstatic.com/steam/apps/2669410/header.jpg"
-        },
-        {
             title: "Insurgency: Sandstorm",
+            releaseDate: "2018",
             role: "Principal AI & Gameplay Programmer",
             company: "New World Interactive",
             points: [
@@ -127,7 +79,61 @@ const data = {
             image: "https://cdn.akamai.steamstatic.com/steam/apps/581320/header.jpg"
         },
         {
+            title: "Metro Awakening VR",
+            releaseDate: "2024",
+            role: "Senior Gameplay Engineer",
+            company: "Vertigo Games",
+            points: [
+                "<strong>VR Interaction</strong>: Architected the player hand interaction system, ensuring physical presence and immersive object manipulation.",
+                "<strong>Optimization</strong>: Optimized low-level gameplay systems for Oculus Quest hardware constraints."
+            ],
+            tech: ["VR", "Oculus Quest", "Physics Interaction", "Optimization"],
+            link: "https://store.steampowered.com/app/2669410/Metro_Awakening/",
+            image: "https://cdn.akamai.steamstatic.com/steam/apps/2669410/header.jpg"
+        },
+        {
+            title: "Prologue: Go Way Back!",
+            releaseDate: "2026",
+            role: "Senior Gameplay Engineer",
+            company: "PLAYERUNKNOWN Productions",
+            points: [
+                "<strong>Inventory System</strong>: Implemented the core inventory management system.",
+                "<strong>Locomotion & Animation</strong>: Integrated ALS and built complex animation systems.",
+                "<strong>Gameplay Prototyping</strong>: Prototyped key features including building and item interaction."
+            ],
+            tech: ["UE5", "Survival Systems", "Open World", "ALS"],
+            link: "https://store.steampowered.com/app/2943740/prologue/",
+            image: "https://cdn.akamai.steamstatic.com/steam/apps/2943740/header.jpg"
+        },
+        {
+            title: "Orion Drift",
+            releaseDate: "2025",
+            role: "Senior Gameplay Engineer",
+            company: "ForwardXP",
+            points: [
+                "<strong>Towbot System</strong>: Engineered the ‘Towbot’ system, designed for an open-world environment supporting 50+ concurrent clients on Meta Quest 2.",
+                "<strong>Prototyping</strong>: Developed prototypes including an extraction multiplayer shooter and a single-player survival horror game."
+            ],
+            tech: ["UE5", "VR", "Multiplayer", "Replication", "Meta Quest"],
+            link: "https://www.meta.com/en-gb/experiences/orion-drift/7181769438517329",
+            image: "images/orion-drift.webp"
+        },
+        {
+            title: "Please, Don't Touch Anything VR",
+            releaseDate: "2023",
+            role: "Senior Gameplay Engineer",
+            company: "ForwardXP",
+            points: [
+                "<strong>Gameplay Systems</strong>: Implementation of core interaction mechanics and puzzle logic for the VR adaptation.",
+                "<strong>Multi-Platform Support</strong>: Ensured consistent gameplay feeling across various VR headsets and controllers."
+            ],
+            tech: ["UE4", "VR", "Puzzle Systems", "Interaction Design"],
+            link: "https://www.meta.com/experiences/please-dont-touch-anything/2706567592751319/",
+            image: "images/pdta.webp"
+        },
+        {
             title: "Day of Infamy",
+            releaseDate: "2017",
             role: "Gameplay Programmer",
             company: "New World Interactive",
             points: [
