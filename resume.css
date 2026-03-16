@@ -292,4 +292,57 @@ a {
     .resume-stats-row {
         border-bottom: 2px solid #000;
     }
+    .download-btn {
+        display: none !important;
+    }
+}
+
+/* Download Button Styles */
+.download-btn {
+    position: fixed;
+    right: 2rem;
+    top: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    background-color: var(--text-primary);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-family: var(--font-main);
+    font-size: 9pt;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    background-color: #333;
+}
+
+.download-btn:active {
+    transform: translateY(0);
+}
+
+.download-btn svg {
+    transition: transform 0.3s ease;
+}
+
+.download-btn:hover svg {
+    transform: translateY(2px);
+}
+
+@media (max-width: 1000px) {
+    .download-btn {
+        right: 1.5rem;
+        top: 1.5rem;
+        padding: 0.7rem 1rem;
+    }
 }

@@ -158,6 +158,9 @@ function loadResume() {
         </div>
     `;
     container.appendChild(eduSec);
+    document.getElementById('download-btn')?.addEventListener('click', () => {
+        window.print();
+    });
 }
 
 document.addEventListener('DOMContentLoaded', loadResume);
