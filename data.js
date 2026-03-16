@@ -84,8 +84,8 @@ const data = {
                 "<strong>Multi-Platform Support</strong>: Ensured consistent gameplay feeling across various VR headsets and controllers."
             ],
             tech: ["UE4", "VR", "Puzzle Systems", "Interaction Design"],
-            link: "https://www.meta.com/en-gb/experiences/please-dont-touch-anything-vr/1138403372855146/",
-            image: "https://cdn.akamai.steamstatic.com/steam/apps/440800/header.jpg"
+            link: "https://www.meta.com/experiences/please-dont-touch-anything/2706567592751319/",
+            image: "images/pdta.webp"
         },
         {
             title: "Prologue: Go Way Back!",
@@ -240,7 +240,7 @@ const data = {
     impactStats: [
         { value: "6M+", label: "Players Reached" },
         { value: "11+", label: "Years Experience" },
-        { value: "5", label: "Shipped Games" },
+        { value: "6", label: "Shipped Games" },
         { value: "5", label: "Platforms", detail: "Xbox, PlayStation, PC, Steam Deck, Oculus Quest" }
     ]
 };
