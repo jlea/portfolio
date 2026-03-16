@@ -29,12 +29,12 @@ const data = {
             role: "Senior Gameplay Engineer",
             dates: "June 2022 - Oct 2024",
             location: "Remote",
-            description: "Balanced startup velocity with structured cross-timezone collaboration. Focused on high-velocity multiplayer prototyping (extraction shooters, VR) alongside partners like Another Axiom.",
+            description: "A mix of startup energy and AAA structure. Focused on high-velocity multiplayer prototyping, specifically extraction shooters, while collaborating across timezones with partners like Another Axiom.",
             points: [
                 "Developed prototypes including an extraction multiplayer shooter and a single-player survival horror game.",
                 "Engineered the ‘Towbot’ system for Orion Drift, designed for an open-world environment supporting 50+ concurrent clients on Meta Quest 2."
             ],
-            projects: "Orion Drift (Meta Quest), Unannounced VR & PC shooters"
+            projects: "Please, Don't Touch Anything VR, Orion Drift (Meta Quest 2), Unannounced multiplayer shooters"
         },
         {
             company: "Vertigo Games",
@@ -74,6 +74,18 @@ const data = {
             tech: ["UE5", "VR", "Multiplayer", "Replication", "Meta Quest"],
             link: "https://www.meta.com/en-gb/experiences/orion-drift/7181769438517329",
             image: "images/orion-drift.webp"
+        },
+        {
+            title: "Please, Don't Touch Anything VR",
+            role: "Senior Gameplay Engineer",
+            company: "ForwardXP",
+            points: [
+                "<strong>Gameplay Systems</strong>: Implementation of core interaction mechanics and puzzle logic for the VR adaptation.",
+                "<strong>Multi-Platform Support</strong>: Ensured consistent gameplay feeling across various VR headsets and controllers."
+            ],
+            tech: ["UE4", "VR", "Puzzle Systems", "Interaction Design"],
+            link: "https://www.meta.com/en-gb/experiences/please-dont-touch-anything-vr/1138403372855146/",
+            image: "https://cdn.akamai.steamstatic.com/steam/apps/440800/header.jpg"
         },
         {
             title: "Prologue: Go Way Back!",
