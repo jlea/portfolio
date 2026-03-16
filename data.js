@@ -17,7 +17,7 @@ const data = {
             dates: "Oct 2024 - Mar 2026",
             location: "Remote",
             projects: "Prologue: Go Way Back!",
-            description: "Developing next-gen gameplay systems and prototypes specializing in UE5 C++ architecture.",
+            description: "Pushing boundaries in large-scale environment tech. I build core survival systems, grid inventory, and advanced animation sets for a massive open-world setting.",
             points: [
                 "Tetris grid-based inventory logic and gamepad navigation.",
                 "Advanced animation systems for climbing and vaulting.",
@@ -29,7 +29,7 @@ const data = {
             role: "Senior Gameplay Engineer",
             dates: "June 2022 - Oct 2024",
             location: "Remote",
-            description: "Engineered core gameplay features and optimization for large-scale projects.",
+            description: "Balanced startup velocity with structured cross-timezone collaboration. Focused on high-velocity multiplayer prototyping (extraction shooters, VR) alongside partners like Another Axiom.",
             points: [
                 "Developed prototypes including an extraction multiplayer shooter and a single-player survival horror game.",
                 "Engineered the ‘Towbot’ system for Orion Drift, designed for an open-world environment supporting 50+ concurrent clients on Meta Quest 2."
@@ -42,7 +42,7 @@ const data = {
             dates: "Aug 2019 - June 2022",
             location: "Amsterdam, NL",
             projects: "Metro Awakening",
-            description: "Primarily working on all stages of development - design, iteration, testing - on a range of prototypes for Meta and Metro Awakening.",
+            description: "Operated in a structured AAA environment with high procedural formality. Worked directly with Meta to build physics-driven hand interactions and core VR systems for titles like Metro Awakening.",
             points: [
                 "Optimized low-level code for mobile VR hardware constraints (forward rendering, tight GPU/CPU budgets).",
                 "Developed physics-based hand interactions similar to Boneworks for immersive interaction with the world."
@@ -54,7 +54,7 @@ const data = {
             dates: "May 2016 - July 2019",
             location: "Amsterdam, NL",
             projects: "Insurgency: Sandstorm, Day of Infamy",
-            description: "Worked closely with key stakeholders, designers, and the art team to achieve desired results in a collaborative, multi-disciplinary environment.",
+            description: "Built the AI and gameplay foundation as the studio scaled from a mod team to a principal-led studio. Sole architect for all enemy AI and cooperative modes in Insurgency: Sandstorm and Day of Infamy.",
             points: [
                 "Designed and implemented all enemy AI combatants and cooperative game modes.",
                 "Built ground and air vehicle navigation systems.",
@@ -146,31 +146,83 @@ const data = {
         dates: "2012 - 2015",
         honors: "Letter of Commendation for Outstanding Academic Achievement"
     },
-    videos: [
+    media: [
+        {
+            id: "WhsjIvqN7-I",
+            type: "video",
+            category: "Featured",
+            title: "TROPPO - Survival Coop Pitch",
+            description: "Valheim meets Insurgency. Procedurally generated islands roguelike experience."
+        },
         {
             id: "rZR88aSsbPA",
+            type: "video",
+            category: "Reels",
             title: "Sandstorm Soldier AI Demo Reel",
             description: "Showcase of the AI behaviors and combat tactics I engineered for Insurgency: Sandstorm."
         },
         {
             id: "zWxUfQrPdVE",
+            type: "video",
+            category: "Reels",
             title: "Voidbound (RTS Project)",
             description: "A failed RTS project I built in my spare time. All systems were made by me and was a great learning experience."
         },
         {
             id: "mh3RprF9MyY",
+            type: "video",
+            category: "WIP & Experiments",
             title: "Runtime World Generation",
             description: "Runtime world generation on Unreal Engine 5. A great success unifying PCG and the Voxel Plugin over multiplayer."
         },
         {
             id: "F80eSXD_bsU",
+            type: "video",
+            category: "WIP & Experiments",
             title: "VR Tactical Interaction",
             description: "A VR experiment to work on authentic gun feeling and tactical play."
         },
         {
             id: "rNhZCn_0XLI",
+            type: "video",
+            category: "Reels",
             title: "Godwoken (Mobile Test)",
             description: "A mobile game test I made during COVID to familiarize myself with mobile games and their limitations."
+        },
+        {
+            id: "iLQ0xm_mSpk",
+            type: "video",
+            category: "WIP & Experiments",
+            title: "Wheel Surface FX",
+            description: "Procedural wheel surface effects for vehicle tech exploration."
+        },
+        {
+            id: "uPO04hJpK_Y",
+            type: "video",
+            category: "WIP & Experiments",
+            title: "Logistics & Transport",
+            description: "A demand-driven resource gathering system, similar to Factorio or Transport Fever."
+        },
+        {
+            id: "MLUUjD5iARU",
+            type: "video",
+            category: "WIP & Experiments",
+            title: "Tank Dynamic Destruction",
+            description: "Dynamic mesh-based destruction experiments using UE4 fracture systems."
+        },
+        {
+            id: "yYskEzi6b48",
+            type: "video",
+            category: "WIP & Experiments",
+            title: "Helicopter crash physics",
+            description: "Physically simulated helicopter crash physics with rotor inertia and persistent debris."
+        },
+        {
+            id: "5IYc7zCmxKI",
+            type: "video",
+            category: "WIP & Experiments",
+            title: "Thumbnail Generator",
+            description: "Automating asset thumbnail generation for high-volume item systems."
         }
     ],
     impactStats: [

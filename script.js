@@ -85,7 +85,6 @@ function loadExperience() {
             <div class="timeline-content">
                 <h4 class="timeline-company">${job.company}</h4>
                 <h3 class="timeline-role">${job.role}</h3>
-                <div class="timeline-desc">${job.description}</div>
                 ${projectsHtml}
                 ${imagesHtml}
             </div>
@@ -179,73 +178,87 @@ function loadStats() {
 
 // Glitch Effect - CSS handled
 
-// Carousel Logic
-function loadCarousel() {
-    const track = document.querySelector('.carousel-track');
-    if (!track) return;
+// Media Showcase Logic
+function loadMediaShowcase() {
+    const container = document.getElementById('media-showcase');
+    if (!container || !data.media) return;
 
-    // create slides
-    data.videos.forEach(video => {
-        const slide = document.createElement('li');
-        slide.classList.add('carousel-slide');
-
-        // Using strict-origin-when-cross-origin for better privacy/security defaults
-        slide.innerHTML = `
-            <div class="video-wrapper">
-                <iframe 
-                    src="https://www.youtube.com/embed/${video.id}" 
-                    title="${video.title}" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
-            </div>
-            <div class="carousel-caption">
-                <h3>${video.title}</h3>
-                <p>${video.description}</p>
-            </div>
-        `;
-
-        track.appendChild(slide);
+    // Group media by category
+    const categories = {};
+    data.media.forEach(item => {
+        if (!categories[item.category]) {
+            categories[item.category] = [];
+        }
+        categories[item.category].push(item);
     });
 
-    const slides = Array.from(track.children);
-    const nextButton = document.querySelector('.next-btn');
-    const prevButton = document.querySelector('.prev-btn');
+    // Define category order
+    const categoryOrder = ['Featured', 'Reels', 'WIP & Experiments'];
 
-    if (slides.length === 0) return;
+    categoryOrder.forEach(catName => {
+        if (!categories[catName]) return;
 
-    let currentIndex = 0;
+        const group = document.createElement('div');
+        group.className = 'media-category-group';
 
-    function updateSlidePosition() {
-        track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
-    }
+        const title = document.createElement('h3');
+        title.className = 'media-category-title';
+        title.textContent = catName;
+        group.appendChild(title);
 
-    nextButton.addEventListener('click', () => {
-        if (currentIndex < slides.length - 1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0; // Loop back
-        }
-        updateSlidePosition();
-    });
+        const grid = document.createElement('div');
+        grid.className = 'media-grid';
 
-    prevButton.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = slides.length - 1; // Loop to end
-        }
-        updateSlidePosition();
+        categories[catName].forEach(item => {
+            const mediaItem = document.createElement('div');
+            mediaItem.className = 'media-item';
+            if (item.category === 'Featured') {
+                mediaItem.classList.add('media-featured');
+            }
+
+            let mediaHtml = '';
+            if (item.type === 'video') {
+                mediaHtml = `
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://www.youtube.com/embed/${item.id}" 
+                            title="${item.title}" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                `;
+            } else if (item.type === 'image') {
+                mediaHtml = `
+                    <div class="image-wrapper">
+                        <img src="${item.url}" alt="${item.title}">
+                    </div>
+                `;
+            }
+
+            mediaItem.innerHTML = `
+                ${mediaHtml}
+                <div class="media-content">
+                    <h3>${item.title}</h3>
+                    <p>${item.description}</p>
+                </div>
+            `;
+
+            grid.appendChild(mediaItem);
+        });
+
+        group.appendChild(grid);
+        container.appendChild(group);
     });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    loadProfile(); // NEW
-    loadStats(); // NEW
-    loadExperience(); // NEW
+    loadProfile();
+    loadStats();
+    loadExperience();
     loadProjects();
     loadSkills();
-    loadCarousel();
+    loadMediaShowcase(); // UPDATED
     initHeroAnimation();
     initScrollAnimations();
 });
